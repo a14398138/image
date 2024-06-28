@@ -9,9 +9,9 @@ app = Flask(__name__)
 def index():
     html = '''
     <!doctype html>
-    <title>ランダムピクセル画像生成</title>
-    <h1>ランダムピクセル画像生成</h1>
-    <button onclick="generateImage()">画像生成</button>
+    <title style=" text-align: center;">運が良ければエッチな画像が出てくるかもしれないサイト</title>
+    <h1>運が良ければエッチな画像が出てくるかもしれないサイト</h1>
+    <button class="custom-button" onclick="generateImage()">画像を生成</button>
     <br>
 
 <style>
@@ -20,6 +20,27 @@ def index():
     flex-direction: column; /* 縦方向に並べる */
     align-items: center; /* 中央揃え */
   }
+  
+        body {
+            background-color: black;
+            color: orange;
+text-align: center;
+        }
+    .custom-button {
+            background: linear-gradient(to right, pink, violet); /* グラデーション背景 */
+            color: brack; /* ボタンの文字色 */
+            border: none; /* ボーダーなし */
+            padding: 15px 32px; /* パディング */
+            text-align: center; /* テキスト中央揃え */
+            text-decoration: none; /* テキスト装飾なし */
+            display: inline-block; /* インラインブロック表示 */
+            font-size: 16px; /* フォントサイズ */
+            margin: 4px 2px; /* マージン */
+            cursor: pointer; /* カーソルをポインターに */
+            border-radius: 50px; /* 角を丸く */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボックスシャドウ */
+            transition: background 0.3s; /* 背景色の遷移 */
+        }
 </style>
 <div class="container">
     <img id="randomImage" src="/image" alt="ランダムピクセル画像">
