@@ -43,7 +43,7 @@ text-align: center;
         }
 </style>
 <div class="container">
-    <img id="randomImage" src="/image" alt="ランダムピクセル画像">
+    <img id="randomImage" src="/image" >
 <iframe src="https://www.ppc-direct.com/index14.html?affid=235754" width="450" height="20" frameborder="no" scrolling="no" title="テキストバナー"></iframe>
 
 <iframe src="https://www.ppc-direct.com/index22.html?affid=235754" width="728" height="90" frameborder="no" scrolling="no" title="バナー"></iframe>
