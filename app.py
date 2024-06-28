@@ -10,7 +10,7 @@ def index():
     html = '''
     <!doctype html>
     <title style=" text-align: center;">運が良ければエッチな画像が出てくるかもしれないサイト</title>
-    <h1>画像を生成</h1>
+    <h1>運が良ければエッチな画像が出てくるかもしれないサイト</h1>
     <button class="custom-button" onclick="generateImage()">画像を生成</button>
     <br>
 
