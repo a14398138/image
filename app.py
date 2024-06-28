@@ -2,7 +2,7 @@ from flask import Flask, send_file, render_template_string
 from PIL import Image
 import io
 import random
-
+import numpy as np
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,7 +10,7 @@ def index():
     html = '''
     <!doctype html>
     <title style=" text-align: center;">運が良ければエッチな画像が出てくるかもしれないサイト</title>
-    <h1>運が良ければエッチな画像が出てくるかもしれないサイト</h1>
+    <h1>画像を生成</h1>
     <button class="custom-button" onclick="generateImage()">画像を生成</button>
     <br>
 
@@ -43,7 +43,7 @@ text-align: center;
         }
 </style>
 <div class="container">
-    <img id="randomImage" src="/image">
+    <img id="randomImage" src="/image" alt="ランダムピクセル画像">
 <iframe src="https://www.ppc-direct.com/index14.html?affid=235754" width="450" height="20" frameborder="no" scrolling="no" title="テキストバナー"></iframe>
 
 <iframe src="https://www.ppc-direct.com/index22.html?affid=235754" width="728" height="90" frameborder="no" scrolling="no" title="バナー"></iframe>
@@ -53,6 +53,7 @@ text-align: center;
 <iframe src="https://www.ppc-direct.com/index16.html?affid=235754" width="600" height="200" frameborder="no" scrolling="no" title="バナー"></iframe>
 </div>
     <script>
+
         function generateImage() {
             fetch('/generate')
                 .then(response => response.blob())
@@ -68,19 +69,12 @@ window.addEventListener('load', generateImage);
 
 @app.route('/generate', methods=['POST', 'GET'])
 def generate():
-    width, height = 512,512
-    img = Image.new('RGB', (width, height))
-    pixels = img.load()
-
-    for i in range(width):
-        for j in range(height):
-            pixels[i, j] = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
+    width, height = 512, 512
+    array = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
+    img = Image.fromarray(array)
     img_io = io.BytesIO()
     img.save(img_io, 'PNG')
     img_io.seek(0)
-
     return send_file(img_io, mimetype='image/png')
-
 if __name__ == '__main__':
     app.run(debug=True)
