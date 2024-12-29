@@ -9,9 +9,13 @@ app = Flask(__name__)
 def index():
     html = '''
     <!doctype html>
-    <title style=" text-align: center;">運が良ければエッチな画像が出てくるかもしれないサイト</title>
-    <h1>運が良ければエッチな画像が出てくるかもしれないサイト</h1>
-    <button class="custom-button" onclick="generateImage()">画像を生成</button>
+    <title style=" text-align: center;">Image generator</title>
+    <h1>Your vision, your rules</h1>
+    <div style="width: 90%; max-width: 600px; margin: 0 auto; padding: 10px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: white;">
+    <input type="text" placeholder="何も起きません" style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+</div>
+
+    <button class="custom-button" onclick="generateImage()">Generate</button>
     <br>
 
 <style>
