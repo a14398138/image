@@ -11,8 +11,8 @@ def index():
     <!doctype html>
     <title style=" text-align: center;">Image generator</title>
     <h1>Your vision, your rules</h1>
-    <div style="width: 90%; max-width: 600px; margin: 0 auto; padding: 10px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: white;">
-    <input type="text" placeholder="何も起きません" style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+    <div style="width: 90%; max-width: 600px;">
+    <input type="text" placeholder="Reveal the fire within—type your vision." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
 </div>
 
     <button class="custom-button" onclick="generateImage()">Generate</button>
@@ -64,7 +64,7 @@ text-align: center;
                 .then(blob => {
                     const url = URL.createObjectURL(blob);
                     document.getElementById('randomImage').src = url;
-                });
+           document.querySelector('input').value = "" ;     });
         }
 window.addEventListener('load', generateImage);
     </script>
