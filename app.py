@@ -11,7 +11,7 @@ def index():
     <!doctype html>
     <title style=" text-align: center;">Image generator</title>
     <h1>Your vision, your rules</h1>
-    <div style="width: 90%; max-width: 600px;">
+    <div style="width: 90%; max-width: 600px;margin: 0 auto;">
     <input type="text" placeholder="Reveal the fire within—type your vision." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
 </div>
 
